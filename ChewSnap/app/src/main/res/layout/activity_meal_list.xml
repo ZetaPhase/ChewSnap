@@ -1,0 +1,28 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relative_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="horizontal">
+
+    <TextView
+        android:text="Your Meals"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/yourMealsLabel"
+        android:layout_weight="1"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textSize="28sp"
+        android:textColor="@color/colorAccent"
+        android:background="@color/colorPrimary"
+        android:paddingLeft="5dp" />
+
+    <ListView
+        android:id="@+id/mealList"
+        android:layout_width="match_parent"
+        android:headerDividersEnabled="false"
+        android:background="#5FFF"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/yourMealsLabel" />
+
+</RelativeLayout>

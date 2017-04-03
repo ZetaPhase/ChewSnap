@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:id="@+id/newMealRelativeLayout">
+
+    <TextView
+        android:text="Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nameLabel"
+        tools:text="Meal Name"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textSize="22sp"
+        android:layout_alignBaseline="@+id/mealName"
+        android:layout_alignBottom="@+id/mealName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="5sp"/>
+
+    <EditText
+        android:id="@+id/mealName"
+        android:layout_width="wrap_content"
+        android:layout_height="40sp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:ems="10"
+        android:fontFamily="sans-serif-smallcaps"
+        android:hint="Enter Name"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:text="Description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/descriptionLabel"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textSize="22sp"
+        android:layout_below="@+id/nameLabel"
+        android:layout_alignLeft="@+id/nameLabel"
+        android:layout_marginTop="15sp"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/description"
+        android:fontFamily="sans-serif-smallcaps"
+        android:hint="elaborate"
+        android:layout_below="@+id/mealName"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="Restaurant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/restaurantNameLabel"
+        android:textSize="22sp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:layout_below="@+id/descriptionLabel"
+        android:layout_alignLeft="@+id/descriptionLabel"
+        android:layout_marginTop="15sp"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/restaurantName"
+        android:fontFamily="sans-serif-smallcaps"
+        android:hint="enter restaurant name"
+        android:layout_below="@+id/description"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="Add Dish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addButton"
+        android:fontFamily="sans-serif-smallcaps"
+        android:layout_marginTop="4dp"
+        android:layout_below="@+id/restaurantNameLabel"
+        android:layout_alignLeft="@+id/restaurantNameLabel" />
+
+    <ListView
+        android:id="@+id/dishList"
+        android:layout_width="match_parent"
+        android:headerDividersEnabled="false"
+        android:background="#4FFF"
+        android:footerDividersEnabled="false"
+        android:layout_height="300dp"
+        android:layout_below="@+id/addButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/finishButton" />
+
+    <Button
+        android:text="Finish Meal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:id="@+id/finishButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+
+</RelativeLayout>
