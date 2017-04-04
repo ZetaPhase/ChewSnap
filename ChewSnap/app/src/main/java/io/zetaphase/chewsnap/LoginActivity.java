@@ -93,6 +93,7 @@ public class LoginActivity extends Activity {
 
         // TODO: Implement your own authentication logic here.
 
+        /*
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -113,7 +114,7 @@ public class LoginActivity extends Activity {
 
         thread.start();
         thread.join();
-
+        */
         View view = this.getCurrentFocus();
         if(view != null){
             InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -123,6 +124,7 @@ public class LoginActivity extends Activity {
         new android.os.Handler().postDelayed(
                 new Runnable() {
                     public void run() {
+                        /*
                         // On complete call either onLoginSuccess or onLoginFailed
                         String r = getResponse();
                         String[] splited = r.split("\\s+");
@@ -136,6 +138,8 @@ public class LoginActivity extends Activity {
                         }else if(tag.equals("login_201_INVALID")){
                             onLoginFailed("Login Failed: Password is Invalid");
                         }
+                        */
+                        onLoginSuccess(); //remove this
                         // onLoginFailed();
                         progressDialog.dismiss();
                     }
