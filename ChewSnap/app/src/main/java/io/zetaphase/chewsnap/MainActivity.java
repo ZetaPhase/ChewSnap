@@ -1,11 +1,13 @@
- package io.zetaphase.chewsnap;
+package io.zetaphase.chewsnap;
 
-import android.app.Activity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
-public class MealListActivity extends Activity {
+/**
+ * Created by xeliot on 4/3/17.
+ */
 
+public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
