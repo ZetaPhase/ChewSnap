@@ -1,2 +1,2 @@
 # ChewSnap
-temporary chewsnap revamp
+temporary chewsnap revamp; will be patched back to originial chewsnap repo;
