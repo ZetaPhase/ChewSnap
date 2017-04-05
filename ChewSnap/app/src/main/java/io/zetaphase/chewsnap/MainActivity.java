@@ -37,7 +37,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Log.d("CLICKED", "itemclicked");
-                Toast.makeText(MainActivity.this, "Time for an upgrade!", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MainActivity.this, "Navbar has been clicked!", Toast.LENGTH_SHORT).show();
+                if(position==0){
+                    Toast.makeText(MainActivity.this, "My meals", Toast.LENGTH_SHORT).show();
+                }else if(position==1){
+                    Toast.makeText(MainActivity.this, "Add new meal", Toast.LENGTH_SHORT).show();
+                }else if(position==2){
+                    Toast.makeText(MainActivity.this, "Check inbox", Toast.LENGTH_SHORT).show();
+                }else if(position==3){
+                    Toast.makeText(MainActivity.this, "About", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -46,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addDrawerItems() {
-        String[] osArray = { "Add New Meal", "Check Inbox", "About" };
+        String[] osArray = { "My Meals", "Add New Meal", "Check Inbox", "About" };
         mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, osArray);
         mDrawerList.setAdapter(mAdapter);
     }
