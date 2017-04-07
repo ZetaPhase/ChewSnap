@@ -1,5 +1,6 @@
 package io.zetaphase.chewsnap;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
@@ -40,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
                 //Toast.makeText(MainActivity.this, "Navbar has been clicked!", Toast.LENGTH_SHORT).show();
                 if(position==0){
                     Toast.makeText(MainActivity.this, "My meals", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(MainActivity.this, MealListActivity.class);
+                    startActivity(intent);
                 }else if(position==1){
                     Toast.makeText(MainActivity.this, "Add new meal", Toast.LENGTH_SHORT).show();
                 }else if(position==2){
