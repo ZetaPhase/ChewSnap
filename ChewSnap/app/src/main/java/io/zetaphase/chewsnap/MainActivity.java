@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                 }else if(position==1){
                     Toast.makeText(MainActivity.this, "Add new meal", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(MainActivity.this, NewMealActivity.class);
                 }else if(position==2){
                     Toast.makeText(MainActivity.this, "Check inbox", Toast.LENGTH_SHORT).show();
                 }else if(position==3){
