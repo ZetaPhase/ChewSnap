@@ -76,7 +76,6 @@ public class LoginActivity extends Activity {
         Log.d(TAG, "Login");
 
         if (!validate()) {
-            onLoginFailed("");
             return;
         }
 
