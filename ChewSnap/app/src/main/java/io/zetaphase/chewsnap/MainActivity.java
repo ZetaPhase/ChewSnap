@@ -51,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Check inbox", Toast.LENGTH_SHORT).show();
                 }else if(position==3){
                     Toast.makeText(MainActivity.this, "About", Toast.LENGTH_SHORT).show();
+                }else if(position==4){
+                    Toast.makeText(MainActivity.this, "Logout", Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -61,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addDrawerItems() {
-        String[] osArray = { "My Meals", "Add New Meal", "Check Inbox", "About" };
+        String[] osArray = { "My Meals", "Add New Meal", "Check Inbox", "About", "Log Out" };
         mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, osArray);
         mDrawerList.setAdapter(mAdapter);
     }
