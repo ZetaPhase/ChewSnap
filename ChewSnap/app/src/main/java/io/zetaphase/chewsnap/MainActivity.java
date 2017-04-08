@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
     private String mActivityTitle;
 
-    public static ArrayList<Meal> mealList = new ArrayList<Meak>();
+    public static ArrayList<Meal> mealList = new ArrayList<Meal>();
     public static ArrayList<Dish> dishList = new ArrayList<Dish>();
     ArrayList<Meal> inboxList = new ArrayList<Meal>();
     public static DishAdapter dishAdapter;
