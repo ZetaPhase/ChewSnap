@@ -14,6 +14,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 /**
  * Created by xeliot on 4/3/17.
  */
@@ -25,6 +27,13 @@ public class MainActivity extends AppCompatActivity {
     private ActionBarDrawerToggle mDrawerToggle;
     private DrawerLayout mDrawerLayout;
     private String mActivityTitle;
+
+    public static ArrayList<Meal> mealList = new ArrayList<Meak>();
+    public static ArrayList<Dish> dishList = new ArrayList<Dish>();
+    ArrayList<Meal> inboxList = new ArrayList<Meal>();
+    public static DishAdapter dishAdapter;
+    public static MealAdapter mealAdapter;
+    public static MealDishAdapter mealDishAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
