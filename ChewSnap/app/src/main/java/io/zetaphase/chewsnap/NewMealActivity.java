@@ -43,6 +43,7 @@ public class NewMealActivity extends Activity{
             @Override
             public void onClick(View v) {
                 Intent popIntent = new Intent(NewMealActivity.this, PopDish.class);
+                startActivity(popIntent);
             }
         });
         dishListView = (ListView) findViewById(R.id.dishList);
