@@ -1,6 +1,7 @@
 package io.zetaphase.chewsnap;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -37,7 +38,13 @@ public class NewMealActivity extends Activity{
                 }
             }
         });
-        Button addButton = (Button) findViewById(R.id.addButton);
+        Button addButton = (Button) findViewById(R.id.addButton); //needs to be implemented
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent popIntent = new Intent(NewMealActivity.this, PopDish.class);
+            }
+        });
         dishListView = (ListView) findViewById(R.id.dishList);
         MainActivity.dishAdapter = new DishAdapter(this, 0, MainActivity.dishList);
         dishListView.setAdapter(MainActivity.dishAdapter);
