@@ -15,7 +15,7 @@
         android:src="@drawable/chew_snap_logo"/>
 
     <TextView
-        android:text="Eat. Snap. Repeat."
+        android:text="Chew. Snap. Repeat."
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView"
