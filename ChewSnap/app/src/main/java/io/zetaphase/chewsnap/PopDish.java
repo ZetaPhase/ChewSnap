@@ -108,16 +108,20 @@ public class PopDish extends Activity{
                 boolean result=Utility.checkPermission(PopDish.this);
 
                 if (items[item].equals("Take Photo")) {
+                    Log.d("FUN", "TAKEPOHOT");
                     userChoosenTask ="Take Photo";
+                    Log.d("FUN", ""+result);
                     if(result)
                         cameraIntent();
 
                 } else if (items[item].equals("Choose from Library")) {
+                    Log.d("FUN", "CHOOSE");
                     userChoosenTask ="Choose from Library";
                     if(result)
                         galleryIntent();
 
                 } else if (items[item].equals("Cancel")) {
+                    Log.d("FUN", "CANCEL");
                     dialog.dismiss();
                 }
             }
