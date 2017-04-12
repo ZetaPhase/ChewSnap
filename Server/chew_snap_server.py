@@ -27,7 +27,7 @@ def request_login():
     print (email)
     conn = sqlite3.connect(DATABASE)
     c = conn.cursor()
-    c.execute("SELECT * FROM users WHERE email='"+email+"'")
+    c.execute("SELECT * FROM users WHERE email=?", (email,))
     user = c.fetchone()
     print user
     conn.close()
@@ -60,14 +60,14 @@ def request_signup():
     hashed = bcrypt.hashpw(password, bcrypt.gensalt());
     conn = sqlite3.connect(DATABASE)
     c = conn.cursor()
-    c.execute("SELECT * FROM users WHERE email='"+email+"'")
+    c.execute("SELECT * FROM users WHERE email=?", (email,))
     user = c.fetchone()
     if(user != None):
         return "signup_409_USEREXISTS"
     else:
         c.execute('SELECT COUNT(userid) FROM users')
         count = c.fetchone()[0]
-        c.execute("INSERT INTO users VALUES("+str(count)+", '"+name+"', '"+email+"', '"+hashed+"')")
+		c.execute("INSERT INTO users VALUES(?, ?, ?, ?)", (str(count), name, email, hashed))
         conn.commit()
         conn.close()
         return "signup_200_OK"
