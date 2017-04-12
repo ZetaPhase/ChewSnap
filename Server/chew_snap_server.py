@@ -24,7 +24,7 @@ def request_login():
     dic = ast.literal_eval(parameters)
     email = dic["email"]
     password = dic["password"]
-    print (email +  " " + password)
+    print (email)
     conn = sqlite3.connect(DATABASE)
     c = conn.cursor()
     c.execute("SELECT * FROM users WHERE email='"+email+"'")
@@ -48,7 +48,7 @@ def request_login():
 @app.route("/signup", methods=["GET", "POST"])
 def request_signup():
     print "user requesting signup"
-    print str(request.form)
+    # print str(request.form)
     parameters = str(request.form)[22:] #remove immutable dict tags
     parameters = parameters[:-9]
     print parameters
@@ -56,7 +56,7 @@ def request_signup():
     name = dic["name"]
     email = dic["email"]
     password = dic["password"]
-    print (name + " " + email + " " + password)
+    print (name + " " + email)
     hashed = bcrypt.hashpw(password, bcrypt.gensalt());
     conn = sqlite3.connect(DATABASE)
     c = conn.cursor()
