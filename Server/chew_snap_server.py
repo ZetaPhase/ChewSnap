@@ -24,10 +24,10 @@ def request_login():
     dic = ast.literal_eval(parameters)
     email = dic["email"]
     password = dic["password"]
-    print (email +  " " + password)
+    print (email)
     conn = sqlite3.connect(DATABASE)
     c = conn.cursor()
-    c.execute("SELECT * FROM users WHERE email='"+email+"'")
+    c.execute("SELECT * FROM users WHERE email=?", (email,))
     user = c.fetchone()
     print user
     conn.close()
@@ -48,7 +48,7 @@ def request_login():
 @app.route("/signup", methods=["GET", "POST"])
 def request_signup():
     print "user requesting signup"
-    print str(request.form)
+    # print str(request.form)
     parameters = str(request.form)[22:] #remove immutable dict tags
     parameters = parameters[:-9]
     print parameters
@@ -56,18 +56,18 @@ def request_signup():
     name = dic["name"]
     email = dic["email"]
     password = dic["password"]
-    print (name + " " + email + " " + password)
+    print (name + " " + email)
     hashed = bcrypt.hashpw(password, bcrypt.gensalt());
     conn = sqlite3.connect(DATABASE)
     c = conn.cursor()
-    c.execute("SELECT * FROM users WHERE email='"+email+"'")
+    c.execute("SELECT * FROM users WHERE email=?", (email,))
     user = c.fetchone()
     if(user != None):
         return "signup_409_USEREXISTS"
     else:
         c.execute('SELECT COUNT(userid) FROM users')
         count = c.fetchone()[0]
-        c.execute("INSERT INTO users VALUES("+str(count)+", '"+name+"', '"+email+"', '"+hashed+"')")
+		c.execute("INSERT INTO users VALUES(?, ?, ?, ?)", (str(count), name, email, hashed))
         conn.commit()
         conn.close()
         return "signup_200_OK"
