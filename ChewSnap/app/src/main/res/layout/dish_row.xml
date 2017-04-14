@@ -24,7 +24,9 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_width="270dp" />
+        android:layout_width="270dp"
+        android:layout_toRightOf="@+id/dishRowImage"
+        android:layout_toEndOf="@+id/dishRowImage" />
 
     <TextView
         android:text="Description"
@@ -36,7 +38,9 @@
         android:layout_below="@+id/dishRowName"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:paddingLeft="15dp"/>
+        android:paddingLeft="15dp"
+        android:layout_toRightOf="@+id/dishRowImage"
+        android:layout_toEndOf="@+id/dishRowImage" />
 
     <RatingBar
         android:layout_width="wrap_content"
