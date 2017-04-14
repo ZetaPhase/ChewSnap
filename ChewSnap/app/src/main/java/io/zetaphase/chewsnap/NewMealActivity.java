@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -47,6 +48,15 @@ public class NewMealActivity extends Activity{
             }
         });
         dishListView = (ListView) findViewById(R.id.dishList);
+        dishListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.d("CLICKPOSITION", ""+position);
+                Intent intent = new Intent(this, ViewDishPopup.class);
+                intent.putExtra("CLICKPOSITION", ""+position);
+                startActivity(intent);
+            }
+        });
         MainActivity.dishAdapter = new DishAdapter(this, 0, MainActivity.dishList);
         dishListView.setAdapter(MainActivity.dishAdapter);
     }
