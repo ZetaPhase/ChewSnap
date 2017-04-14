@@ -52,7 +52,7 @@ public class NewMealActivity extends Activity{
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Log.d("CLICKPOSITION", ""+position);
-                Intent intent = new Intent(this, ViewDishPopup.class);
+                Intent intent = new Intent(NewMealActivity.this, ViewDishPopup.class);
                 intent.putExtra("CLICKPOSITION", ""+position);
                 startActivity(intent);
             }
