@@ -38,6 +38,7 @@ public class ViewDishPopup extends Activity{
         ratingBar.setRating(dish.getRating());
         image.setImageBitmap(dish.getBitmap());
 
+                MealAdapter listAdapter = new MealAdapter(this, 0, MainActivity.mealList);
 
     }
 }
