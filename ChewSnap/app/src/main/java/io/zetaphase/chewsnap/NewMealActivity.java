@@ -38,6 +38,7 @@ public class NewMealActivity extends Activity{
                     if(!a){return;}
                     resetActivity();
                     Toast.makeText(NewMealActivity.this, "New Meal has been added!", Toast.LENGTH_LONG).show();
+                    finish();
                 }
             }
         });
