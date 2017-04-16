@@ -23,6 +23,13 @@ import android.widget.ListView;
                 //View meal
             }
         });
-
+        mealListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                //Give option to delete meal
+                return false;
+            }
+        });
+        mealListView.setAdapter(MainActivity.mealAdapter);
     }
 }
