@@ -20,7 +20,9 @@ import android.widget.ListView;
         mealListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //View meal
+                Intent intent = new Intent(MealListActivity.this, ViewMealPopup.class);
+                intent.putExtra("CLICKPOSITION", ""+position);
+                startActivity(intent);
             }
         });
         mealListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
