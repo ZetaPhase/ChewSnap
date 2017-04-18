@@ -1,8 +1,6 @@
 package io.zetaphase.chewsnap;
 
-/**
- * Created by xeliot on 4/16/17.
- */
+import android.app.Activity;
 
-public class ViewMealPopup {
+public class ViewMealPopup extends Activity{
 }
