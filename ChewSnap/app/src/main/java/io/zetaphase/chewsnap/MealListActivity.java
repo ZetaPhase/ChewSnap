@@ -1,6 +1,8 @@
  package io.zetaphase.chewsnap;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -27,9 +29,25 @@ import android.widget.ListView;
         });
         mealListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                //Give option to delete meal
-                return false;
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int pos, long l) {
+                final CharSequence[] items = { "Delete", "Share", "Cancel" };
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(MealListActivity.this);
+                builder.setTitle(MainActivity.mealList.get(pos).getTitle().toUpperCase());
+                final int position = pos;
+                builder.setItems(items, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int item) {
+                        if (items[item].equals("Delete")) {
+                            MainActivity.mealList.remove(position);
+                            MainActivity.mealAdapter.updateMealList(MainActivity.mealList);
+                            MainActivity.mealAdapter.notifyDataSetChanged();
+                        }
+                        dialog.dismiss();
+                    }
+                });
+                builder.show();
+                return true;
             }
         });
         mealListView.setAdapter(MainActivity.mealAdapter);
