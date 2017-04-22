@@ -1,7 +1,7 @@
-from flask import Flask
-from flask import request
 import ast
 import sqlite3
+from flask import Flask
+from flask import request
 import bcrypt
 
 app = Flask(__name__)
