@@ -8,12 +8,12 @@ import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-public class ViewMealPopup extends Activity{
+public class ViewMealPopup extends Activity {
 
     private ListView mealDishListView;
 
     @Override
-    public void onCreate(Bundle savedInstanceState){
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.popup_meal);
@@ -24,7 +24,7 @@ public class ViewMealPopup extends Activity{
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
-        getWindow().setLayout((int) (width*0.8), (int) (height*0.8));
+        getWindow().setLayout((int) (width * 0.8), (int) (height * 0.8));
 
         Intent intent = getIntent();
         int clickedPosition = Integer.valueOf(intent.getStringExtra("CLICKPOSITION"));
@@ -43,4 +43,5 @@ public class ViewMealPopup extends Activity{
         MainActivity.mealDishAdapter = new MealDishAdapter(this, 0, meal.getDishes());
         mealDishListView.setAdapter(MainActivity.mealDishAdapter);
 
+    }
 }
