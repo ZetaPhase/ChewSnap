@@ -73,6 +73,7 @@ def request_signup():
         return "signup_200_OK"
 
 
-
+host = "switching to aws testing soon";
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=6321)
+    #app.run(host=host, port=80)
